@@ -1,0 +1,22 @@
+{
+    "name": "Simple Button",
+    "version": "1.0.0",
+    "description": "A super simple button class. Able to detect press down, click, and hold inputs.",
+    "keywords": "button, click, press, hold",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/joegatling/simpleButtonLibrary.git"
+    },
+    "authors": 
+    [
+        {
+            "name": "Joe Gatling",
+            "email": "Joe.gatling@gmail.com",
+            "url": "https://joegatling.com"
+        }
+    ],
+    },
+    "licence": "GNU GPL 3.0",
+    "frameworks": "*",
+    "platforms": "*"
+}
