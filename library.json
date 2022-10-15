@@ -1,5 +1,5 @@
 {
-    "name": "Simple Button",
+    "name": "SimpleButton",
     "version": "1.0.0",
     "description": "A super simple button class. Able to detect press down, click, and hold inputs.",
     "keywords": "button, click, press, hold",
