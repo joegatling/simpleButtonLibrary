@@ -26,7 +26,10 @@ void setup()
 }
 
 void loop()
-{}
+{
+    // Very important! Remember to update the button
+    button.Update();
+}
 
 void onBeginPress()
 {
