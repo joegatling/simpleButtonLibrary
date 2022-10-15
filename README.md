@@ -18,19 +18,7 @@ Here is a very basic use example
 // Your button should connect this pin to ground.
 SimpleButton myButton(10);
 
-void setup() 
-{
-    myButton.SetBeginPressCallback(onBeginPress);
-    myButton.SetEndPressCallback(onEndPress);
-    myBbutton.SetHoldCallback(onHold);
-}
-
-void loop()
-{
-    // Very important! Remember to update the button
-    button.Update();
-}
-
+// These need to be declared before they are used in code
 void onBeginPress()
 {
   // Button has been pressed down
@@ -45,5 +33,20 @@ void onHold()
 {
   // Button has been held down
 }
+
+void setup() 
+{
+    myButton.SetBeginPressCallback(onBeginPress);
+    myButton.SetEndPressCallback(onEndPress);
+    myBbutton.SetHoldCallback(onHold);
+}
+
+void loop()
+{
+    // Very important! Remember to update the button
+    button.Update();
+}
+
+
 
 ```
