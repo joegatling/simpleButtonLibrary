@@ -14,8 +14,7 @@
             "email": "Joe.gatling@gmail.com",
             "url": "https://joegatling.com"
         }
-    ]
-    },
+    ],
     "licence": "GNU GPL 3.0",
     "frameworks": "*",
     "platforms": "*"
