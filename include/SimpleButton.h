@@ -18,7 +18,9 @@ class SimpleButton
 
     void SetBeginPressCallback(simpleButtonCallbackFunction function);
     void SetEndPressCallback(simpleButtonCallbackFunction function);
-    void SetHoldCallback(simpleButtonCallbackFunction function);
+    
+    void SetBeginHoldCallback(simpleButtonCallbackFunction function);
+    void SetEndHoldCallback(simpleButtonCallbackFunction function);
 
   private:
     int _pin;
@@ -34,8 +36,9 @@ class SimpleButton
     bool _usePullDownLogic = false;
 
     simpleButtonCallbackFunction _beginPressFunction = NULL;
-    simpleButtonCallbackFunction _clickFunction = NULL;
-    simpleButtonCallbackFunction _holdFunction = NULL;
+    simpleButtonCallbackFunction _endPressFunction = NULL;
+    simpleButtonCallbackFunction _beginHoldFunction = NULL;
+    simpleButtonCallbackFunction _endHoldFunction = NULL;
     
 };
 

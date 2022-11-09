@@ -59,28 +59,32 @@ void SimpleButton::Update()
           if(!_didHoldAction)
           {
             // We didn't do a hold this press, so send a click callback
-            if(_clickFunction)
+            if(_endPressFunction)
             {
-              _clickFunction();
+              _endPressFunction();
             }
           }
           else
           {
-            // If we did a hold action, then do nothing here.
+            if(_endHoldFunction)
+            {
+              _endHoldFunction();
+            }
+            
             _didHoldAction = false;
           }
         }        
       }
       else
       {
-        if(_buttonState == LOW)
+        if(_buttonState == BUTTON_DOWN)
         {
           // Check for hold (If there is a hold action)
-          if(_holdFunction && !_didHoldAction)
+          if(_beginHoldFunction && !_didHoldAction)
           {
             if(millis() - _pressedTime > HOLD_TIME)
             {
-              _holdFunction();
+              _beginHoldFunction();
               _didHoldAction = true;
             }
           }
@@ -89,17 +93,24 @@ void SimpleButton::Update()
     }    
 }
 
-void SimpleButton::SetEndPressCallback(simpleButtonCallbackFunction function)
-{
-  _clickFunction = function;
-}
-
-void SimpleButton::SetHoldCallback(simpleButtonCallbackFunction function)
-{
-  _holdFunction = function;
-}
-
 void SimpleButton::SetBeginPressCallback(simpleButtonCallbackFunction function)
 {
   _beginPressFunction = function;
 }
+
+void SimpleButton::SetEndPressCallback(simpleButtonCallbackFunction function)
+{
+  _endPressFunction = function;
+}
+
+void SimpleButton::SetBeginHoldCallback(simpleButtonCallbackFunction function)
+{
+  _beginHoldFunction = function;
+}
+
+void SimpleButton::SetEndHoldCallback(simpleButtonCallbackFunction function)
+{
+  _endHoldFunction = function;
+}
+
+
