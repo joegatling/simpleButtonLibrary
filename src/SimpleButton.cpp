@@ -120,4 +120,8 @@ void SimpleButton::SetLongPressDuration(unsigned long duration)
   _longPressDuration = duration;
 }
 
+void SimpleButton::IsButtonDown()
+{
+  return _buttonState == BUTTON_DOWN;
+}
 

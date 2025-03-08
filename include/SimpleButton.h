@@ -24,6 +24,9 @@ class SimpleButton
 
     void SetLongPressDuration(unsigned long duration);
 
+    bool IsButtonDown();
+    bool IsButtonUp() { return !IsButtonDown(); }
+
   private:
     int _pin;
 

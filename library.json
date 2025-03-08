@@ -1,6 +1,6 @@
 {
     "name": "VerySimpleButton",
-    "version": "1.2.0",
+    "version": "1.4.0",
     "description": "A super simple button class. Able to detect press down, click, and hold inputs.",
     "keywords": "button, click, press, hold",
     "repository": {
