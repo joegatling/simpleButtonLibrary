@@ -6,7 +6,8 @@
 #define BUTTON_DOWN (_usePullDownLogic ? HIGH : LOW)
 #define BUTTON_UP (_usePullDownLogic ? LOW : HIGH)
 
-SimpleButton::SimpleButton(int pin)
+SimpleButton::SimpleButton(int pin):
+_longPressDuration(HOLD_TIME)
 {
   _usePullDownLogic = false;
 
@@ -17,7 +18,8 @@ SimpleButton::SimpleButton(int pin)
   _buttonState = BUTTON_UP;
 }
 
-SimpleButton::SimpleButton(int pin, bool usePullDownLogic)
+SimpleButton::SimpleButton(int pin, bool usePullDownLogic):
+_longPressDuration(HOLD_TIME)
 {
   _usePullDownLogic = usePullDownLogic;
 
@@ -82,7 +84,7 @@ void SimpleButton::Update()
           // Check for hold (If there is a hold action)
           if(_beginHoldFunction && !_didHoldAction)
           {
-            if(millis() - _pressedTime > HOLD_TIME)
+            if(millis() - _pressedTime > _longPressDuration)
             {
               _beginHoldFunction();
               _didHoldAction = true;
@@ -111,6 +113,11 @@ void SimpleButton::SetBeginHoldCallback(simpleButtonCallbackFunction function)
 void SimpleButton::SetEndHoldCallback(simpleButtonCallbackFunction function)
 {
   _endHoldFunction = function;
+}
+
+void SimpleButton::SetLongPressDuration(unsigned long duration)
+{
+  _longPressDuration = duration;
 }
 
 

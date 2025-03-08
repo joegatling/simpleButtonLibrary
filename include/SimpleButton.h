@@ -22,6 +22,8 @@ class SimpleButton
     void SetBeginHoldCallback(simpleButtonCallbackFunction function);
     void SetEndHoldCallback(simpleButtonCallbackFunction function);
 
+    void SetLongPressDuration(unsigned long duration);
+
   private:
     int _pin;
 
@@ -30,6 +32,8 @@ class SimpleButton
 
     unsigned long _debounceTime;
     unsigned long _pressedTime;   
+
+    unsigned long _longPressDuration;
 
     bool _didHoldAction = false;
 
